@@ -1,0 +1,125 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SendingEmails" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="553.333333333333,1322" sap2010:WorkflowViewState.IdRef="SendingEmails_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/credentials" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="36">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>CredentialManagement</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Credentials.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SendingEmails" sap:VirtualizedContainerService.HintSize="476,1257.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ss:SecureString" Name="EmailPassword" />
+      <Variable x:TypeArguments="x:String" Name="EmailUsername" />
+      <Variable x:TypeArguments="x:String" Name="EmailTemplate" />
+      <Variable x:TypeArguments="ui:UiElement" Name="Screenshot" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ReadTextFile Content="[EmailTemplate]" DisplayName="Read Email Template" FileName="Data\EmailTemplate.txt" sap:VirtualizedContainerService.HintSize="434,80.6666666666667" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+    <p:GetSecureCredential CredentialType="Generic" DisplayName="Get email Credentials" sap:VirtualizedContainerService.HintSize="434,80.6666666666667" sap2010:WorkflowViewState.IdRef="GetSecureCredential_1" Password="[EmailPassword]" PersistanceType="Enterprise" Target="EmailCredentials" Username="[EmailUsername]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: PlaceholderWindow" sap:VirtualizedContainerService.HintSize="434,624.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="c4aad3a5-69ae-4576-a1dc-7fdfe09c97b8" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,330" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTakeScreenshot DisplayName="Take Screenshot 'PlaceholderWindow'" FileName="Data\Screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="334,236.666666666667" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_2" OutUiElement="[Screenshot]" ScopeIdentifier="c4aad3a5-69ae-4576-a1dc-7fdfe09c97b8" Version="V1">
+              <uix:NTakeScreenshot.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1940, 1100" FriendlyName="'PlaceholderWindow'" Guid="35a0bf45-1af4-407e-ad78-dd89e40d6e78" InformativeScreenshot="44de278c77832bd940828c4e72bcf0af.png" ScopeSelectorArgument="&lt;wnd app='uipath.studio.launcher.exe' cls='HwndWrapper*' title='PlaceholderWindow' /&gt;" SearchSteps="Selector, FuzzySelector">
+                  <uix:TargetAnchorable.FuzzySelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </uix:TargetAnchorable.FuzzySelectorArgument>
+                </uix:TargetAnchorable>
+              </uix:NTakeScreenshot.Target>
+            </uix:NTakeScreenshot>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-10, -10, 1940, 1100" FilePath="C:\Users\adole\AppData\Local\Programs\UiPath\Studio\net461\uipath.studio.launcher.exe" IconBase64="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" InformativeScreenshot="c0d1334e044383e878714d9209842ed3.png" Selector="&lt;wnd app='uipath.studio.launcher.exe' cls='HwndWrapper*' title='PlaceholderWindow'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format(EmailTemplate, Now.ToString)]" DisplayName="Send SMTP Mail" Email="[EmailUsername]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,156.666666666667" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Name="Ropot Robby" Port="587" SecureConnection="Auto" SecurePassword="[EmailPassword]" Server="smtp.gmail.com" Subject="Automation report" To="ania.doleba@wp.pl">
+      <ui:SendMail.Files>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+          <InArgument x:TypeArguments="x:String">
+            <Literal x:TypeArguments="x:String">Data\Screenshot.png</Literal>
+          </InArgument>
+        </scg:List>
+      </ui:SendMail.Files>
+    </ui:SendMail>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="sent" />
+  </Sequence>
+</Activity>

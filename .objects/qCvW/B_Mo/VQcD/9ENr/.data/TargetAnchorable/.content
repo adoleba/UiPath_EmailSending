@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable ContentHash="y-6PYcW6QkiXPHXagHltIw" DesignTimeRectangle="0, 0, 1920, 1080" FriendlyName="'Chrome Legacy Window'" FullSelectorArgument="&lt;wnd cls='Chrome_RenderWidgetHostHWND' title='Chrome Legacy Window' /&gt;" FuzzySelectorArgument="&lt;wnd cls='Chrome_RenderWidgetHostHWND' title='Chrome Legacy Window' check:text='Chrome Legacy Window' /&gt;" Guid="4a22eaae-9a86-43a1-8d09-e2017e2c979b" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='UiPath Academy - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="InformativeScreenshot" originalValue="40043bd441c8a679e90e8a54164b6c5e.png" xmlns="">0oB6kHsURtUylUjbohcYD4g</imageRef>
+</TargetAnchorable>

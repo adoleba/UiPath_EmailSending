@@ -1,0 +1,6 @@
+Hi {0}
+
+I'v generated Ids for new employees and updated your file on {1}
+
+Regards
+{2}

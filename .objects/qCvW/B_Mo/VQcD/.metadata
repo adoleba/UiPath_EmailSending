@@ -1,0 +1,12 @@
+﻿{
+  "Id": "VQcD_-5IZUepEnQDq-WwqQ",
+  "Reference": "1IGV0jp7AUup2L8asuMMFQ/VQcD_-5IZUepEnQDq-WwqQ",
+  "ParentRef": "1IGV0jp7AUup2L8asuMMFQ/B_Mok2El0EyLqJ8Vq6HlqQ",
+  "Name": "Chrome: UiPath Academy",
+  "Type": "Screen",
+  "Created": "2022-04-12T16:02:27.2964843Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-04-12T16:02:27.2964843Z"
+}
